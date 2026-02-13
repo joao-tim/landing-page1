@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocos juntos</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bloco {
+  position: absolute;
+  border: 2px solid transparent;
+  background-color: #1e1e1e; /* cor única */
+}
+
+
+    /* Bloco 1 - imagem */
+    .b1 {
+      width: 240px;
+      height: 240px;
+      top: 0;
+      left: 0;
+      background-image: url("753a7345-4463-4311-b7a8-84ed77c597e1.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Bloco 2 - vídeo */
+    .b2 {
+      width: calc(100% - 240px);
+      height: 240px;
+      top: 0;
+      left: 240px;
+      overflow: hidden;
+    }
+
+    .b2 video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Bloco 3 - botões */
+    .b3 {
+      width: 240px;
+      height: calc(100% - 240px);
+      top: 240px;
+      left: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .b3 button {
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .b3 button:hover {
+      background: #555;
+    }
+
+    /* Bloco 4 - páginas */
+    .b4 {
+      width: calc(100% - 240px);
+      height: calc(100% - 240px);
+      top: 240px;
+      left: 240px;
+    }
+
+    .b4 iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="bloco b1">
+      <img src="spot2-removebg-preview.png" height="200" width="200">
+    </div>
+
+   <div class="bloco b2">
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/album/1UzrzuOmZfBgXyS3pgKD10?utm_source=generator&theme=0"
+    width="100%"
+    height="100%"
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+
+   <div class="bloco b3">
+  <button onclick="abrir('https://pt.wikipedia.org/wiki/Racionais_MC%27s')">
+     RACIONAIS MC
+  </button>
+
+  <button onclick="abrir('https://pt.wikipedia.org/wiki/Projota')">
+     PROJOTA
+  </button>
+
+  <button onclick="abrir('https://pt.wikipedia.org/wiki/Sabotage_(cantor)')">
+    SABOTAGE 
+  </button>
+
+  <button onclick="abrir('https://pt.wikipedia.org/wiki/Veigh')">
+     VEIGH 
+  </button>
+
+  <button onclick="abrir('suporte.html')">
+  <i class="fa-solid fa-headset"></i> Suporte
+</button>
+
+  </button>
+</div>
+
+
+    <div class="bloco b4">
+      <iframe id="frame"></iframe>
+    </div>
+
+  </div>
+
+  <script>
+    function abrir(url) {
+      document.getElementById("frame").src = url;
+    }
+  </script>
+</body>
+</html>
